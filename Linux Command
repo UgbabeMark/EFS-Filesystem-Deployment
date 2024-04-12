@@ -1,0 +1,28 @@
+## Amazon EFS
+sudo yum -y update
+mkdir ~/efs-mount-point
+
+# Install EFS Utils
+sudo yum install -y amazon-efs-file-utils
+
+# Mount Using the EFS mount
+sudo mount  -t  efs -o tls  <DNS name>:/  ~/efs-mount-point
+
+# Change Directory
+cd efs-mount-point
+
+#list files
+ls
+
+# Create directory
+sudo mkdir <filename>
+
+# list files
+ls
+
+# creat a file in the directory using
+sudo touch <filename>
+
+#list Files
+ls
+
