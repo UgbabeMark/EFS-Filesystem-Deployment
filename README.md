@@ -33,7 +33,7 @@
 
   Configure the security group rules as per your requirements.
   
-  Create Security group with inbound rule to all ssh trffic from anywhere.
+  Create a Security Group with the inbound rule to all ssh traffic from anywhere.
   
   ![Enrollment](Images/sg1.png)
 
@@ -59,11 +59,11 @@
 
   Ensure that the instances are associated with the security group created for EFS.
 
-  Reapet the EC2 creation step for second Instance.
+  Repeat the EC2 creation step for the second Instance.
   
    ![Enrollment](Images/ec2.png)
 
-  Create each instance in a different subnet and select exsiting security group and choose the one you created for EFS. 
+  Create each instance in a different subnet select the existing security group and choose the one you created for EFS. 
   
   Launch Instance.
   
@@ -81,19 +81,19 @@
    
   ![Enrollment](Images/efs1.png)
 
-  Click on created EfsFilesystem to configure settings.
+  Click on the created EfsFilesystem to configure settings.
   
   ![Enrollment](Images/efs2.png)
 
   Configure the filesystem settings.
 
-  Copy DNS Name, Select Network and choose manage
+  Copy the DNS Name, Select Network and choose to manage
 
   ![Enrollment](Images/efs3.png)
 
-  Choose only availbility zone where your instance was created. 
+  Choose only the availability zone where your instance was created. 
   
-  Delete defult security group and select the one you created ans Save.
+  Delete the default security group, select the one you created and Save.
   # ![Enrollment](Images/efs4.png)
 
 # 4. Mount EFS on EC2 Instances:
@@ -108,15 +108,15 @@
   
   ![Enrollment](Images/mount1.png)
 
-  Select Connect using EC2 Instance connect and Connect.
+  Select Connect using EC2 Instance Connect and Connect.
   
   ![Enrollment](Images/mount2.png)
 
-  Run the provided Linux Command on each of the Instances (web1 and Web2). 
+  Run the provided Linux Command on each instance (web1 and Web2). 
   
   ![Enrollment](Images/Mount3.png)
 
-  Incude your DNS Name on the command provided and run command to mount your Instance.
+  Include your DNS Name on the command provided and run the command to mount your Instance.
 
   Change directory to efs-mount-point
 
@@ -125,7 +125,7 @@
   **Note: Make directory only in one AZ** (web1)
   sudo mkdir <filename>
   
-  ls to see created directory
+  ls to see the created directory
 
   **Note touch <filename> only in One AZ**(web2)
 
@@ -136,11 +136,11 @@
 
   Create files and directories on the mounted EFS filesystem from one EC2 instance and verify that they are accessible from the other EC2 instance. 
 
-  Incude your DNS Name on the command provided and run command to mount your Instance.
+  Include your DNS Name on the command provided and run the command to mount your Instance. (web2)
 
-  Change directory to efs-mount-point
+  Change directory to efs-mount-point(web2)
 
-  check files in Directory (ls) to see created file from 1st Instance (web1)
+  check files in Directory (ls) to see the created file from 1st Instance (web1)
   
   # ![Enrollment](Images/Mount5.png)
 
